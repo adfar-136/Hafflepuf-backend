@@ -1,0 +1,5 @@
+var f = require("./function")
+const result = f.add(5,3)
+const result1 = f.sub(14,8)
+console.log(result)
+console.log(result1)
