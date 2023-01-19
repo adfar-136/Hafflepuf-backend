@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        nav{
+         align-content: center;
+        }
+        body{
+            background-color: aqua;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            padding-left: 550px;
+        }
+        li{
+            float: left;
+        }
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover{
+            background-color: #111;
+        }
+        form{
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+        }
+        .form-control{
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .form-control label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-control input,
+        .form-control select,
+        .form-control textarea{
+            border: 1px solid #777;
+            border-radius: 5px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"]{
+            display: inline-block;
+            width: auto;
+        }
+        button{
+            background-color: #4aa57a;
+            border: 1px solid #777;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        button:hover{
+            background-color: aqua;
+        }
+    </style>
+   
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Registration form</h1>
+        <form id="form">
+            <div class="form-control">
+                <label for="name" id="label-name">Name</label>
+                <input type="text" id="name" placeholder="Enter your Name">
+            </div>
+            <div class="form-control">
+                <label for="email" id="label-email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-control">
+                <label for="age" id="label-age">Age</label>
+                <input type="text" id="age" placeholder="Enter your age">
+            </div>
+            <div class="form-control">
+                <label for="role" id="label-role">Which best role suits you?</label>
+                <select name="role" id="role">
+                    <option value="student">Student</option>
+                    <option value="Intern">Intern</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label>Gender</label>
+                <label for="gender-1">
+                    <input type="radio" id="gender-1" name="gender">Male
+                </label>
+                <label for="gender-2">
+                    <input type="radio" id="gender-2" name="gender">Female
+                </label>
+            </div>
+            <div class="form-control">
+                <label>Skills you have!
+                    <small>(Check all that apply)</small>
+                </label>
+                <label for="inp-1"><input type="checkbox" name="inp">C programming</label>
+                <label for="inp-2"><input type="checkbox" name="inp">C++ programming</label>
+                <label for="inp-3"><input type="checkbox" name="inp">Js programming</label>
+                <label for="inp-4"><input type="checkbox" name="inp">HTML programming</label>
+                <label for="inp-5"><input type="checkbox" name="inp">CSS programming</label>
+                <label for="inp-6"><input type="checkbox" name="inp">Python programming</label>
+                <label for="inp-7"><input type="checkbox" name="inp">Java programming</label>
+
+                
+            </div>
+            <div class="form-control">
+                <label for="comment">Any Comments or suggestions</label>
+                <textarea name="comment" id="comment" placeholder="Enter your message here" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,51 @@
+var express = require("express")
+
+var app = express()
+app.get("/",(req,res)=>{
+    res.send(("Welcome to express"))
+})
+app.get("/about",(req,res)=>{
+    res.send("Welcome to my About Page")
+})
+app.get("/contact",(req,res)=>{
+    res.send("Welcome to contact page")
+})
+app.get("/adfar",(req,res)=>{
+    res.write("<h1>Adfar Rasheed is here</h1>")
+    res.write("<h1>Adfar Rasheed is here</h1>")
+    res.write("<h1>Adfar Rasheed is here</h1>")
+    res.write("<h1>Adfar Rasheed is here</h1>")
+    res.write("<h1>Adfar Rasheed is here</h1>")
+    res.write("<h1>Adfar Rasheed is here</h1>")
+    res.send()
+})
+app.listen(3000,()=>{
+    console.log("listening to 3000 port")
+})
+
+
+var express = require("express")
+var app = express()
+app.get("/about",(req,res)=>{
+    res.json([
+        {id:1, name : "Adfar" },
+        {id:2,name : "Amir"},
+        {id:3,name :"Ashutosh"}
+    ])
+})
+app.listen(3000,()=>{
+    console.log("listening to 3000 port")
+})
+
+
+
+var path = require("path")
+const staticPath = path.join(__dirname,"../public/")
+
+app.use(express.static(staticPath))
+app.get("/",(req,res)=>{
+    res.send("hello world")
+  })
+app.listen(3000,()=>{
+    console.log("listening to 3000 port")
+})
