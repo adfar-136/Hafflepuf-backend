@@ -42,20 +42,21 @@ app.put("/api/students/:id",(req,res)=>{
     else {
         res.status(404)
     }
-    
 })
-
-
-
-
-
-
-
-
-
-
-
-
+app.delete("/api/students/:id",(req,res)=>{
+    let id = req.params.id
+    let index = students.findIndex((student)=>{
+        return (student.id === Number.parseInt(id))
+    })
+    if(index>=0){
+        let std = students[index]
+        students.splice(index,1)
+        res.json(std)    
+    }
+    else {
+        res.status(404)
+    }
+})
 
 
 
