@@ -79,7 +79,27 @@ app.put("/api/student/:id",(req,res)=>{
         return res.sendStatus(400)
     }
 })
-
+app.delete("/api/student/:id",(req,res)=>{
+    let id = req.params.id;
+    if(!isNaN(id)){
+        id = parseInt(id)
+        let studentOld = studentArray.find((e)=>
+        {
+            return e.id === id
+        })
+        if(studentOld !== undefined){
+            let index =studentArray.indexOf(studentOld);
+            studentArray.splice(index,1)
+            return res.sendStatus(200)
+        }
+        else {
+            return res.sendStatus(404)
+        }
+    }
+    else {
+        return res.sendStatus(400)
+    }
+})
 app.listen("8000",()=>{
     console.log("listening to 8000 port")
 })
