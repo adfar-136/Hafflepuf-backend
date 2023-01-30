@@ -2,7 +2,11 @@ const { hashSync, compareSync } = require('bcrypt')
 const express = require('express')
 const userModel = require('./database')
 const app = express()
+const jwt = require("jsonwebtoken")
 const UserModel = require('./database')
+const passport = require('passport')
+require("./passport")
+app.use(passport.initialize())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.post("/register",(req,res)=>{
@@ -43,8 +47,26 @@ app.post("/login",(req,res)=>{
             message: "Incorrect Password"
         })
       }
+      const payload ={
+        username: user.username,
+        id:user.id
+      }
+    const token = jwt.sign(payload,"Random string",{expiresIn:"1d"})
+    return res.status(200).send({
+        success : true,
+        message : "logged in successfully",
+        token :"Bearer " + token
+    })
     })
 
+})
+app.get("/profile",passport.authenticate("jwt",{session:false}),
+(req,res)=>{
+    
+    return res.status(200).send({
+        success : true,
+        
+    })
 })
 app.listen(5000,()=>{
     console.log("listening to port 500 successfully")
